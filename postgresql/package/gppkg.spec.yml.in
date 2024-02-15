@@ -1,0 +1,18 @@
+Format: V2
+Pkgname: 3dcitydb
+Architecture: #arch
+OS: #os
+GPDBVersion: #gpver
+Version: ossv3.3.2+pivotal.2_pv3.3_gpdb7.1
+Description: The 3D City is a geo database to store, represent, and manage virtual 3D city models on top of a standard spatial relational database.
+PreInstall:
+  All: |
+       # Check if libtiff.so.* is available in the shared library cache       
+PostInstall:
+  All: |
+      echo "Please run the following commands to enable the 3dcitydb package:"
+      echo "$GPHOME/share/postgresql/contrib/3dcitydb-4.4/3dcity_manager.sh database_name install'"
+PostUpdate:
+  All: |
+    #  echo "Please run the following commands to finish the upgrade:"
+     
